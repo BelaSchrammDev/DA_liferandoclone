@@ -1,0 +1,258 @@
+/* ---------------------------------------- */
+/* spacing */
+/* ---------------------------------------- */
+
+/* ---------------------------------------- */
+/* variables */
+
+:root {
+    --myspacing_1: 5px;
+    --myspacing_2: 10px;
+    --myspacing_3: 20px;
+    --myspacing_4: 30px;
+    --myspacing_5: 50px;
+    --myspacing_6: 100px;
+    --myspacing_fx: clamp(5px, 1.5vw, 100px);
+    --myspacing_fy: clamp(5px, 1.5vh, 100px);
+}
+
+@media (max-width: 500px) {
+    .root {
+        --myspacing_fx: 0;
+    }
+}
+
+/* ---------------------------------------- */
+/* padding all */
+
+.p_1 {
+    padding: var(--myspacing_1);
+}
+
+.p_2 {
+    padding: var(--myspacing_2);
+}
+
+.p_3 {
+    padding: var(--myspacing_3);
+}
+
+.p_4 {
+    padding: var(--myspacing_4);
+}
+
+.p_5 {
+    padding: var(--myspacing_5);
+}
+
+.p_6 {
+    padding: var(--myspacing_6);
+}
+
+.p_fx {
+    padding: var(--myspacing_fx);
+}
+
+.p_fy {
+    padding: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
+/* padding left/right */
+
+.p_x_1 {
+    padding-left: var(--myspacing_1);
+    padding-right: var(--myspacing_1);
+}
+
+.p_x_2 {
+    padding-left: var(--myspacing_2);
+    padding-right: var(--myspacing_2);
+}
+
+.p_x_3 {
+    padding-left: var(--myspacing_3);
+    padding-right: var(--myspacing_3);
+}
+
+.p_x_4 {
+    padding-left: var(--myspacing_4);
+    padding-right: var(--myspacing_4);
+}
+
+.p_x_5 {
+    padding-left: var(--myspacing_5);
+    padding-right: var(--myspacing_5);
+}
+
+.p_x_6 {
+    padding-left: var(--myspacing_6);
+    padding-right: var(--myspacing_6);
+}
+
+.p_x_fx {
+    padding-left: var(--myspacing_fx);
+    padding-right: var(--myspacing_fx);
+}
+
+.p_x_fy {
+    padding-left: var(--myspacing_fy);
+    padding-right: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
+/* padding top/bottom */
+
+.p_y_1 {
+    padding-top: var(--myspacing_1);
+    padding-bottom: var(--myspacing_1);
+}
+
+.p_y_2 {
+    padding-top: var(--myspacing_2);
+    padding-bottom: var(--myspacing_2);
+}
+
+.p_y_3 {
+    padding-top: var(--myspacing_3);
+    padding-bottom: var(--myspacing_3);
+}
+
+.p_y_4 {
+    padding-top: var(--myspacing_4);
+    padding-bottom: var(--myspacing_4);
+}
+
+.p_y_5 {
+    padding-top: var(--myspacing_5);
+    padding-bottom: var(--myspacing_5);
+}
+
+.p_y_6 {
+    padding-top: var(--myspacing_6);
+    padding-bottom: var(--myspacing_6);
+}
+
+.p_y_fx {
+    padding-top: var(--myspacing_fx);
+    padding-bottom: var(--myspacing_fx);
+}
+
+.p_y_fy {
+    padding-top: var(--myspacing_fy);
+    padding-bottom: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
+/* margin all */
+
+.m_1 {
+    margin: var(--myspacing_1);
+}
+
+.m_2 {
+    margin: var(--myspacing_2);
+}
+
+.m_3 {
+    margin: var(--myspacing_3);
+}
+
+.m_4 {
+    margin: var(--myspacing_4);
+}
+
+.m_5 {
+    margin: var(--myspacing_5);
+}
+
+.m_6 {
+    margin: var(--myspacing_6);
+}
+
+.m_fx {
+    margin: var(--myspacing_fx);
+}
+
+.m_fy {
+    margin: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
+/* margin top / bottom */
+
+.m_y_1 {
+    margin-top: var(--myspacing_1);
+    margin-bottom: var(--myspacing_1);
+}
+
+.m_y_2 {
+    margin-top: var(--myspacing_2);
+    margin-bottom: var(--myspacing_2);
+}
+
+.m_y_3 {
+    margin-top: var(--myspacing_3);
+    margin-bottom: var(--myspacing_3);
+}
+
+.m_y_4 {
+    margin-top: var(--myspacing_4);
+    margin-bottom: var(--myspacing_4);
+}
+
+.m_y_5 {
+    margin-top: var(--myspacing_5);
+    margin-bottom: var(--myspacing_5);
+}
+
+.m_y_6 {
+    margin-top: var(--myspacing_6);
+    margin-bottom: var(--myspacing_6);
+}
+
+.m_y_fx {
+    margin-top: var(--myspacing_fx);
+    margin-bottom: var(--myspacing_fx);
+}
+
+.m_y_fy {
+    margin-top: var(--myspacing_fy);
+    margin-bottom: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
+/* flex gap */
+
+.flex_gap_1 {
+    gap: var(--myspacing_1);
+}
+
+.flex_gap_2 {
+    gap: var(--myspacing_2);
+}
+
+.flex_gap_3 {
+    gap: var(--myspacing_3);
+}
+
+.flex_gap_4 {
+    gap: var(--myspacing_4);
+}
+
+.flex_gap_5 {
+    gap: var(--myspacing_5);
+}
+
+.flex_gap_6 {
+    gap: var(--myspacing_6);
+}
+
+.flex_gap_fx {
+    gap: var(--myspacing_fx);
+}
+
+.flex_gap_fy {
+    gap: var(--myspacing_fy);
+}
+

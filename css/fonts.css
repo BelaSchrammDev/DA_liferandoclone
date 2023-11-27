@@ -1,0 +1,27 @@
+* {
+    font-family: 'Rationale', sans-serif;
+}
+
+.font_32_bold {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.font_24_bold {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.font_16_bold {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* rationale-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Rationale';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/rationale-v28-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }

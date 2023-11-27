@@ -1,0 +1,32 @@
+/* ---------------------------------------- */
+/* variables */
+
+:root {
+    --scrollbar_color: green;
+    --scrollbar_bg_color: white;
+}
+
+/* ---------------------------------------- */
+/* Firefox */
+.my_scrollbar {
+    scrollbar-width: auto;
+    scrollbar-color: var(--scrollbar_color) var(--scrollbar_bg_color);
+    scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, and Safari */
+.my_scrollbar::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    width: 10px;
+}
+
+.my_scrollbar::-webkit-scrollbar-track {
+    background: var(--scrollbar_bg_color);
+}
+
+.my_scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar_color);
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+}
+
