@@ -2,17 +2,25 @@
     font-family: 'Rationale', sans-serif;
 }
 
-.font_32_bold {
+.font_bold {
+    font-weight: bold;
+}
+
+.font_xce {
+    text-align: center;
+}
+
+.font_32b {
     font-size: 32px;
     font-weight: bold;
 }
 
-.font_24_bold {
+.font_24b {
     font-size: 24px;
     font-weight: bold;
 }
 
-.font_16_bold {
+.font_16b {
     font-size: 16px;
     font-weight: bold;
 }

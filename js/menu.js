@@ -1,25 +1,33 @@
 const pizzaArray = [
-    { name: 'Margherita', info: 'VA', ingredients: ['Tomatensauce', 'Mozzarella', 'Basilikum'] },
-    { name: 'Pepperoni', info: 'AS', ingredients: ['Tomatensauce', 'Mozzarella', 'Pepperoni'] },
-    { name: 'Funghi', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Champignons'] },
-    { name: 'Quattro Formaggi', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Gorgonzola', 'Parmesan', 'Ricotta'] },
-    { name: 'Diavola', info: 'S', ingredients: ['Tomatensauce', 'Mozzarella', 'scharfe Salami'] },
-    { name: 'Hawaiian', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Ananas'] },
-    { name: 'BBQ Chicken', ingredients: ['BBQ-Sauce', 'Mozzarella', 'Hähnchen', 'Rote Zwiebel'] },
-    { name: 'Veggie Supreme', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Paprika', 'Rote Zwiebel', 'Oliven', 'Champignons'] },
-    { name: 'Capricciosa', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Artischocken', 'Champignons', 'Oliven'] },
-    { name: 'Prosciutto e Funghi', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Champignons'] },
-    { name: 'Salami', ingredients: ['Tomatensauce', 'Mozzarella', 'Salami'] },
-    { name: 'Caprese', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Tomaten', 'Büffelmozzarella', 'Basilikum'] },
-    { name: 'Seafood', ingredients: ['Tomatensauce', 'Mozzarella', 'Meeresfrüchte', 'Knoblauch', 'Petersilie'] },
-    { name: 'Trüffel', info: 'V', ingredients: ['Trüffelöl', 'Mozzarella', 'Champignons', 'Parmesan'] },
-    { name: 'Mexicana', info: 'Scharf', ingredients: ['Tomatensauce', 'Mozzarella', 'Hackfleisch', 'Paprika', 'Zwiebeln', 'Chilisauce'] },
-    { name: 'Spinat & Feta', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Spinat', 'Feta', 'Knoblauch'] },
-    { name: 'Mango Chicken', ingredients: ['Tomatensauce', 'Mozzarella', 'Hähnchen', 'Mango', 'Curry'] },
-    { name: 'Bianca', info: 'V', ingredients: ['Olivenöl', 'Mozzarella', 'Parmesan', 'Rucola'] },
-    { name: 'Tandoori', ingredients: ['Tandoori-Sauce', 'Mozzarella', 'Hähnchen', 'Paprika', 'Joghurtsauce'] },
-    { name: 'Bolognese', ingredients: ['Bolognese-Sauce', 'Mozzarella', 'Parmesan'] }
+    { name: 'Margherita', info: 'VA', ingredients: ['Tomatensauce', 'Mozzarella', 'Basilikum'], price: 8.99 },
+    { name: 'Pepperoni', info: 'AS', ingredients: ['Tomatensauce', 'Mozzarella', 'Pepperoni'], price: 9.99 },
+    { name: 'Funghi', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Champignons'], price: 10.49 },
+    { name: 'Quattro Formaggi', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Gorgonzola', 'Parmesan', 'Ricotta'], price: 11.99 },
+    { name: 'Diavola', info: 'S', ingredients: ['Tomatensauce', 'Mozzarella', 'scharfe Salami'], price: 10.99 },
+    { name: 'Hawaiian', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Ananas'], price: 12.49 },
+    { name: 'BBQ Chicken', ingredients: ['BBQ-Sauce', 'Mozzarella', 'Hähnchen', 'Rote Zwiebel'], price: 11.79 },
+    { name: 'Veggie Supreme', info: 'G', ingredients: ['Tomatensauce', 'Mozzarella', 'Paprika', 'Rote Zwiebel', 'Oliven', 'Champignons'], price: 12.99 },
+    { name: 'Capricciosa', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Artischocken', 'Champignons', 'Oliven'], price: 13.49 },
+    { name: 'Prosciutto e Funghi', ingredients: ['Tomatensauce', 'Mozzarella', 'Schinken', 'Champignons'], price: 11.99 },
+    { name: 'Salami', ingredients: ['Tomatensauce', 'Mozzarella', 'Salami'], price: 9.49 },
+    { name: 'Caprese', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Tomaten', 'Büffelmozzarella', 'Basilikum'], price: 12.99 },
+    { name: 'Seafood', ingredients: ['Tomatensauce', 'Mozzarella', 'Meeresfrüchte', 'Knoblauch', 'Petersilie'], price: 14.99 },
+    { name: 'Trüffel', info: 'V', ingredients: ['Trüffelöl', 'Mozzarella', 'Champignons', 'Parmesan'], price: 15.99 },
+    { name: 'Mexicana', info: 'Scharf', ingredients: ['Tomatensauce', 'Mozzarella', 'Hackfleisch', 'Paprika', 'Zwiebeln', 'Chilisauce'], price: 11.49 },
+    { name: 'Spinat & Feta', info: 'V', ingredients: ['Tomatensauce', 'Mozzarella', 'Spinat', 'Feta', 'Knoblauch'], price: 12.49 },
+    { name: 'Mango Chicken', ingredients: ['Tomatensauce', 'Mozzarella', 'Hähnchen', 'Mango', 'Curry'], price: 13.79 },
+    { name: 'Bianca', info: 'V', ingredients: ['Olivenöl', 'Mozzarella', 'Parmesan', 'Rucola'], price: 10.99 },
+    { name: 'Tandoori', ingredients: ['Tandoori-Sauce', 'Mozzarella', 'Hähnchen', 'Paprika', 'Joghurtsauce'], price: 13.29 },
+    { name: 'Bolognese', ingredients: ['Bolognese-Sauce', 'Mozzarella', 'Parmesan'], price: 11.49 }
 ];
+
+
+const infoArray = {
+    'V': { name: 'Vegetarisch', fontColor: 'black', bgColor: '#f3f375' },
+    'G': { name: 'Vegan', fontColor: 'black', bgColor: 'orange' },
+    'A': { name: 'Angebot', fontColor: 'white', bgColor: '#1da31d' },
+    'S': { name: 'Scharf', fontColor: 'white', bgColor: '#ff5151' },
+}
 
 
 function renderMenu() {
@@ -33,9 +41,10 @@ function renderMenu() {
 
 function getMenuBoxHTML(pizza) {
     return `<div class="flex_c_jfs_afs flex_gap_1 menu_box">
-                <span>${pizza.name}</span>
+                <span class="font_bold">${pizza.name}</span>
                 <div class="flex_r_jfs_ace flex_gap_1">${getInfos(pizza)}</div>
                 <span>${getIngredients(pizza)}</span>
+                <span class="font_bold">${pizza.price} €</span>
                 <div class="menu_box_add"><img src="./img/plus.svg"></div>
             </div>`;
 }
@@ -45,18 +54,8 @@ function getInfos(pizza) {
     let infoHtml = '';
     if (pizza.info) {
         for (let index = 0; index < pizza.info.length; index++) {
-            const infoTag = pizza.info[index];
-            switch (infoTag) {
-                case 'V':
-                    infoHtml += getInfoSpan('Vegetarisch', 'black', '#f3f375');
-                    break;
-                case 'A':
-                    infoHtml += getInfoSpan('Angebot', 'white', '#1da31d');
-                    break;
-                case 'S':
-                    infoHtml += getInfoSpan('Scharf', 'white', '#ff5151');
-                    break;
-            }
+            const infoTag = infoArray[pizza.info[index]];
+            if (infoTag) infoHtml += getInfoSpan(infoTag.name, infoTag.fontColor, infoTag.bgColor);
         }
     }
     return infoHtml;
@@ -64,7 +63,12 @@ function getInfos(pizza) {
 
 
 function getInfoSpan(text, color, bgcolor) {
-    return `<span class="menu_box_info" style="background-color: ${bgcolor};color: ${color};">${text}</span>`
+    return `
+            <span
+                class="menu_box_info"
+                style="background-color: ${bgcolor};color: ${color};"
+                >${text}
+            </span>`
 }
 
 

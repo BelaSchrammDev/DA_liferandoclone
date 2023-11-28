@@ -13,10 +13,6 @@
     cursor: pointer;
 }
 
-.menu_box span:first-child {
-    font-weight: bold;
-}
-
 .menu_box_add {
     border: 1px solid lightgray;
     border-radius: 1000px;
@@ -43,6 +39,11 @@
     color: white;
     padding: 2px;
     font-size: 10px;
+}
+
+.basket {
+    width: 300px;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.37);
 }
 
 @media (max-width: 500px) {
