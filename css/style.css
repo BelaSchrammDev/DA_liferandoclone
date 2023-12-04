@@ -54,8 +54,13 @@
 }
 
 .basket_item {
+    max-height: 500px;
     display: flex;
     border-bottom: 1px solid lightgray;
+    transition: max-height 500ms ease-in-out,
+        opacity 125ms ease-in-out,
+        padding-top 500ms ease-in-out,
+        padding-bottom 500ms ease-in-out;
 }
 
 .basket_item button {
@@ -74,7 +79,12 @@
     background-color: lightgray;
 }
 
-@media (max-width: 500px) {
+.basket_item img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 700px) {
     :root {
         --responsiv: true;
     }
@@ -82,7 +92,9 @@
     .basket {
         margin-top: 0;
     }
+}
 
+@media (max-width: 500px) {
     .menu_box {
         border-radius: 0;
     }

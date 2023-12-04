@@ -30,10 +30,18 @@ const infoArray = {
 }
 
 
-function getPizzaInfo(pizzaName) {
+function initMenu() {
     for (let index = 0; index < pizzaArray.length; index++) {
         const pizza = pizzaArray[index];
-        if (pizza.name == pizzaName) return pizza;
+        pizza.ID = pizza.name.replace(' ', '_');
+    }
+}
+
+
+function getPizzaInfo(pizzaID) {
+    for (let index = 0; index < pizzaArray.length; index++) {
+        const pizza = pizzaArray[index];
+        if (pizza.ID == pizzaID) return pizza;
     }
     return undefined;
 }
@@ -49,7 +57,7 @@ function renderMenu() {
 
 
 function getMenuBoxHTML(pizza) {
-    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="addToBasket('${pizza.name}')">
+    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="addToBasket('${pizza.ID}')">
                 <span class="font_bold">${pizza.name}</span>
                 <div class="flex_r_jfs_ace flex_gap_1">${getInfos(pizza)}</div>
                 <span>${getIngredients(pizza)}</span>

@@ -4,6 +4,7 @@ let ticking = false;
 
 function init() {
     includeHTML();
+    initMenu();
     initBasket();
     renderMenu();
     renderBasket();
