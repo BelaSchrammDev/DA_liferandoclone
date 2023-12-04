@@ -1,0 +1,22 @@
+.digitrole {
+    overflow: hidden;
+    height: 16px;
+    display: flex;
+}
+
+.digitrole_single {
+    overflow: hidden;
+    width: 10px;
+    height: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.digitrole_single div {
+    transition: margin 500ms ease-in-out;    
+}

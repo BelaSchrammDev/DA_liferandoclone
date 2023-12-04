@@ -16,8 +16,12 @@
 
     --padding_left_right: clamp(5px, 1.5vw, 50px);
 
-    --main_section_max_width: 1440px;
+    --main_section_max_width: 1000px;
     --main_section_width: calc(100% - (var(--padding_left_right)*2));
+
+    --basket_margin_top: 0;
+
+    --responsiv: false;
 }
 
 html {
@@ -61,11 +65,6 @@ body {
 /* ------------------------------------------ */
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
     background-color: var(--main_header_bg_color);
     box-shadow: var(--header_box_shadow);
     height: var(--header_hight);

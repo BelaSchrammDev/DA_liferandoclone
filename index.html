@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="./css/spacing.css">
     <link rel="stylesheet" href="./css/scrollbar.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/digitrole.css">
     <script src="./js/script.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/basket.js"></script>
+    <script src="./js/digitrole.js"></script>
     <title>Document</title>
 </head>
 
@@ -19,25 +22,36 @@
 
     <header w3-include-html="./templates/header.html"></header>
 
-    <section class="my_container header_margin_top flex_r_jce_afs flex_gap_2 p_y_1">
+    <div class="flex_r_jfs_ast">
 
-        <div class="flex_grow_1">
-            <div>
-                <h1>Überschrift</h1>
+        <section class="my_container flex_r_jce_afs flex_gap_2 p_y_1">
+            <div class="flex_grow_1">
+                <div>
+                    <h1>Überschrift</h1>
+                </div>
+                <div id="menu" class="flex_c_jfs_ast flex_gap_1"></div>
             </div>
+        </section>
 
-            <div id="menu" class="flex_c_jfs_ast flex_gap_1"></div>
-        </div>
-        <div class="flex_c_jfs_ast basket">
+        <div id="basket" class="flex_c_jfs_ast basket">
             <h2 class="font_xce">Warenkorb</h2>
-            <ul>
-                <li>pizza 1</li>
-                <li>pizza 2</li>
-                <li>pizza 3</li>
-            </ul>
+            <div id="basket_list" class="flex_c_jfs_ast">
+
+            </div>
+            <div id="price_summary" class="flex_c_jfs_ast m_2 font_16b">
+                <div class="flex_r_jsb_ace">
+                    <span>Zwischensumme</span>
+                    <div id="price_summary_role" digitrole_template="XX0.00€" class="digitrole"></div>
+                </div>
+            </div>
+                <div id="empty_basket_info" class="flex_c_jce_ace" style="display: none;">
+                <img src="./img/basket1.svg" alt="">
+                <h2>Fülle Deinen Warenkorb</h2>
+                <span>Füge leckere Pizzen aus dem Menu hinzu</span>
+            </div>
         </div>
 
-    </section>
+    </div>
 
     <footer w3-include-html="./templates/footer.html"></footer>
 

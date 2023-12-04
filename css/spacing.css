@@ -222,6 +222,49 @@
 }
 
 /* ---------------------------------------- */
+/* margin left / right */
+
+.m_x_1 {
+    margin-left: var(--myspacing_1);
+    margin-right: var(--myspacing_1);
+}
+
+.m_x_2 {
+    margin-left: var(--myspacing_2);
+    margin-right: var(--myspacing_2);
+}
+
+.m_x_3 {
+    margin-left: var(--myspacing_3);
+    margin-right: var(--myspacing_3);
+}
+
+.m_x_4 {
+    margin-left: var(--myspacing_4);
+    margin-right: var(--myspacing_4);
+}
+
+.m_x_5 {
+    margin-left: var(--myspacing_5);
+    margin-right: var(--myspacing_5);
+}
+
+.m_x_6 {
+    margin-left: var(--myspacing_6);
+    margin-right: var(--myspacing_6);
+}
+
+.m_x_fx {
+    margin-right: var(--myspacing_fx);
+    margin-left: var(--myspacing_fx);
+}
+
+.m_x_fy {
+    margin-right: var(--myspacing_fy);
+    margin-left: var(--myspacing_fy);
+}
+
+/* ---------------------------------------- */
 /* flex gap */
 
 .flex_gap_1 {

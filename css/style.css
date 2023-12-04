@@ -42,14 +42,51 @@
 }
 
 .basket {
+    margin-top: var(--basket_margin_top);
     width: 300px;
+    min-width: 300px;
     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.37);
 }
 
+.basket img {
+    width: 40px;
+    height: 40px;
+}
+
+.basket_item {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.basket_item button {
+    border: unset;
+    background-color: #e3e3e3;
+    border-radius: 1000px;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    transition: background-color 150ms ease-in-out;
+}
+
+.basket_item button:hover {
+    background-color: lightgray;
+}
+
 @media (max-width: 500px) {
+    :root {
+        --responsiv: true;
+    }
+
+    .basket {
+        margin-top: 0;
+    }
+
     .menu_box {
         border-radius: 0;
     }
+
     .menu_box_add {
         border-right: unset;
         border-top: unset;
@@ -58,4 +95,3 @@
         top: 0;
     }
 }
-
