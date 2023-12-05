@@ -9,7 +9,7 @@
     --header_hight: 50px;
     --header_box_shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.37);
 
-    --footer_min_height: 50px;
+    --footer_min_height: 100px;
 
     --main_anim_delay: 125ms;
     --post_anim_delay: 250ms;
@@ -19,7 +19,7 @@
     --main_section_max_width: 1000px;
     --main_section_width: calc(100% - (var(--padding_left_right)*2));
 
-    --basket_margin_top: 0;
+    --basket_height: calc(100vh - var(--footer_min_height));
 
     --responsiv: false;
 }
@@ -31,7 +31,6 @@ html {
 
 body {
     margin: 0px;
-    overflow-x: hidden;
     position: relative;
     min-height: 100vh;
     display: flex;

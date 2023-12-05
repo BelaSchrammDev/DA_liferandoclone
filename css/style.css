@@ -42,10 +42,19 @@
 }
 
 .basket {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
     margin-top: var(--basket_margin_top);
+    height: var(--basket_height);
     width: 300px;
     min-width: 300px;
     box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.37);
+}
+
+.basket_list {
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .basket img {
@@ -56,6 +65,7 @@
 .basket_item {
     overflow: hidden;
     max-height: 200px;
+    min-height: 98px;
     display: flex;
     border-bottom: 1px solid lightgray;
     transition: max-height 300ms ease-in-out,

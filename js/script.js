@@ -1,14 +1,9 @@
-let lastKnownScrollPosition = 0;
-let ticking = false;
-
-
 function init() {
     includeHTML();
     initMenu();
     initBasket();
     renderMenu();
     setVisibiltyOfDivs();
-    addScrollBehavior();
 }
 
 
@@ -25,26 +20,6 @@ async function includeHTML() {
             element.innerHTML = 'Page not found';
         }
     }
-}
-
-
-function addScrollBehavior() {
-    document.addEventListener("scroll", () => {
-        lastKnownScrollPosition = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                changeScrollPosition(lastKnownScrollPosition);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-}
-
-
-function changeScrollPosition(yPos) {
-    const headerHeight = document.getElementsByTagName('header')[0].clientHeight;
-    setCssVariable('--basket_margin_top', `${Math.max(yPos - headerHeight, 0)}px`);
 }
 
 

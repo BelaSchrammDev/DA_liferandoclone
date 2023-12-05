@@ -1,4 +1,3 @@
-// basket: { pizzaname: pizzaamount, ...: ...,}
 let basket = {};
 const deliveryPrice = 1500;
 const minOrderValue = 5000;
@@ -15,6 +14,11 @@ function setElementDisplayStyle(element, dstyle) { setStyleAttribute(element, `d
 function setStyleAttribute(element, value) { document.getElementById(element).style = value; }
 function ifBasketEmpty() { return Object.keys(basket).length == 0; }
 function getBasketItemAmount(pizzaID) { return basket[pizzaID]; }
+
+
+function setBasketItemPrice(pizzaID, amount = 1) {
+    setDigitRoleValue(`basketitem_${pizzaID}_summary`, getPizzaInfo(pizzaID).price * amount);
+}
 
 
 function setVisibiltyOfDivs() {
@@ -53,9 +57,9 @@ function getBasketItemHtml(pizzaID) {
                 <div id="basketitem_${pizza.ID}_summary" digitrole_template="XX0,00€" class="digitrole"></div>
             </div>
             <div class="flex_r_jfe_ace flex_gap_2">
-                <button onclick="increaseBasket('${pizza.ID}')">-</button>
+                <button onclick="decreaseBasket('${pizza.ID}')">-</button>
                 <span id="amount2_${pizza.ID}" style="width: 30px; text-align: center;">${amount}</span>
-                <button onclick="decreaseBasket('${pizza.ID}')">+</button>
+                <button onclick="increaseBasket('${pizza.ID}')">+</button>
                 <button onclick="deleteFromBasket('${pizza.ID}')"><img src="./img/trash.svg" alt=""></button>
             </div>
         </div>
@@ -68,7 +72,7 @@ function addNewBasketItem(pizzaID) {
     setVisibiltyOfDivs();
     document.getElementById('basket_list').innerHTML += getBasketItemHtml(pizzaID);
     initDigitRole(document.getElementById(`basketitem_${pizzaID}_summary`));
-    setDigitRoleValue(`basketitem_${pizzaID}_summary`, getPizzaPrice(pizzaID));
+    setBasketItemPrice(pizzaID);
 }
 
 
@@ -76,23 +80,25 @@ function updateBasketItem(pizzaID) {
     const amount = basket[pizzaID];
     document.getElementById('amount1_' + pizzaID).innerHTML = amount;
     document.getElementById('amount2_' + pizzaID).innerHTML = amount;
-    setDigitRoleValue(`basketitem_${pizzaID}_summary`, getPizzaInfo(pizzaID).price * amount);
+    setBasketItemPrice(pizzaID, amount);
 }
 
 
 function deleteFromBasket(pizzaID) {
     const basketItem = document.getElementById('basketitem_' + pizzaID);
-    basketItem.style = `max-height: 0; border-bottom: 0px solid rgba(0,0,0,0);`;
+    basketItem.style = `min-height: 0; max-height: 0; border-bottom: 0px solid rgba(0,0,0,0);`;
     setTimeout(() => { basketItem.remove(); }, 600);
     delete basket[pizzaID];
     renderSummarySection();
+    setVisibiltyOfDivs();
 }
 
-// increase
-// decrease
-function increaseBasket(pizzaID) {
+
+function decreaseBasket(pizzaID) {
     basket[pizzaID]--;
-    if (basket[pizzaID] == 0) deleteFromBasket(pizzaID);
+    if (basket[pizzaID] == 0) {
+        deleteFromBasket(pizzaID);
+    }
     else {
         updateBasketItem(pizzaID);
         renderSummarySection();
@@ -100,7 +106,7 @@ function increaseBasket(pizzaID) {
 }
 
 
-function decreaseBasket(pizzaID) {
+function increaseBasket(pizzaID) {
     if (basket[pizzaID]) {
         basket[pizzaID]++;
         updateBasketItem(pizzaID);

@@ -38,6 +38,18 @@ function initMenu() {
 }
 
 
+function formatPrice(num) {
+    let numAsString = num.toString();
+    let characters = numAsString.split("").reverse();
+    let parts = [];
+    for (let i = 0; i < characters.length; i += 2) {
+        let part = characters.slice(i, i + 2).reverse().join("");
+        parts.unshift(part);
+    }
+    return parts.join(",");
+}
+
+
 function getPizzaInfo(pizzaID) {
     for (let index = 0; index < pizzaArray.length; index++) {
         const pizza = pizzaArray[index];
@@ -64,11 +76,11 @@ function renderMenu() {
 
 
 function getMenuBoxHTML(pizza) {
-    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="decreaseBasket('${pizza.ID}')">
+    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="increaseBasket('${pizza.ID}')">
                 <span class="font_bold">${pizza.name}</span>
                 <div class="flex_r_jfs_ace flex_gap_1">${getInfos(pizza)}</div>
                 <span>${getIngredients(pizza)}</span>
-                <span class="font_bold">${pizza.price} €</span>
+                <span class="font_bold">${formatPrice(pizza.price)} €</span>
                 <div class="menu_box_add"><img src="./img/plus.svg"></div>
             </div>`;
 }
