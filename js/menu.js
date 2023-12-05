@@ -47,6 +47,13 @@ function getPizzaInfo(pizzaID) {
 }
 
 
+function getPizzaPrice(pizzaID) {
+    const pizza = getPizzaInfo(pizzaID);
+    if (pizza) return pizza.price;
+    return 0;
+}
+
+
 function renderMenu() {
     let menuHtml = '';
     for (let index = 0; index < pizzaArray.length; index++) {
@@ -57,7 +64,7 @@ function renderMenu() {
 
 
 function getMenuBoxHTML(pizza) {
-    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="addToBasket('${pizza.ID}')">
+    return `<div class="flex_c_jfs_afs flex_gap_1 menu_box" onclick="decreaseBasket('${pizza.ID}')">
                 <span class="font_bold">${pizza.name}</span>
                 <div class="flex_r_jfs_ace flex_gap_1">${getInfos(pizza)}</div>
                 <span>${getIngredients(pizza)}</span>

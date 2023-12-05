@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+.font_normal {
+    font-weight: normal;
+}
+
 .font_xce {
     text-align: center;
 }

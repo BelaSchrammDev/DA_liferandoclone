@@ -7,7 +7,7 @@ function init() {
     initMenu();
     initBasket();
     renderMenu();
-    renderBasket();
+    setVisibiltyOfDivs();
     addScrollBehavior();
 }
 
