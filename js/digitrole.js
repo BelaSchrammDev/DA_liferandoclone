@@ -33,8 +33,7 @@ function ifEven(number) { return number % 2 === 0; }
 function getSingleDigitRole(digitroleID, digitroleNumber, digittype) {
     return `
         <div id="${getDigitRoleID(digitroleID, digitroleNumber)}"
-             digit_type="${digittype}"
-             class="digitrole_single">
+             digit_type="${digittype}">
              <div style="margin-top: ${ifEven(digitroleNumber) ? 0 : '-1px'}">0</div><div>0</div><div> </div>
         </div>`;
 }
@@ -56,14 +55,12 @@ function getValueStringWithZeros(digitroleID, value) {
     let returnText = '';
     const digitDivs = document.getElementById(digitroleID).children;
     for (let index = digitDivs.length - 1; index >= 0; index--) {
-        const digitrole = digitDivs[index];
-        if ('X0'.includes(digitrole.getAttribute('digit_type'))) {
-            if (valueCount > valueText.length - 1) returnText += 'X';
+        const digitType = digitDivs[index].getAttribute('digit_type');
+        if ('X0'.includes(digitType)) {
+            if (valueCount > valueText.length - 1) returnText += digitType;
             else returnText += valueText[valueCount];
             valueCount++;
-        } else {
-            returnText += '.';
-        }
+        } else returnText += '.';
     }
     return returnText;
 }

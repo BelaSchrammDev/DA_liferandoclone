@@ -19,6 +19,7 @@
     --main_section_max_width: 1000px;
     --main_section_width: calc(100% - (var(--padding_left_right)*2));
 
+    --basket_width: 350px;
     --basket_height: calc(100vh - var(--footer_min_height));
     --basket_item_height: 100px;
 

@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.digitrole_single {
+.digitrole>div {
     overflow: hidden;
     width: 10px;
     height: 16px;
@@ -17,6 +17,16 @@
     align-items: center;
 }
 
-.digitrole_single div {
-    transition: margin 500ms ease-in-out;    
+.digitrole>div>div {
+    transition: margin 500ms ease-in-out;
+}
+
+.dr_24px {
+    height: 24px;
+}
+
+.dr_24px>div {
+    width: 13px;
+    height: 24px;
+    font-size: 24px;
 }

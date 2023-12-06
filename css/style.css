@@ -54,8 +54,12 @@
     align-self: flex-start;
     margin-top: var(--basket_margin_top);
     height: var(--basket_height);
-    width: 300px;
-    min-width: 300px;
+    width: var(--basket_width);
+    min-width: var(--basket_width);
+}
+
+.basket_moveup {
+    transition: margin-top 250ms ease-in-out;
 }
 
 .basket_list {
@@ -100,13 +104,58 @@
     height: 20px;
 }
 
+.pay_button {
+    background-color: orange;
+    border-radius: 1000px;
+    border: unset;
+    width: 100%;
+}
+
+.pay_button:hover {
+    background-color: rgb(255, 180, 41);
+    cursor: pointer;
+}
+
+.basket_button_div {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    transition: bottom 125ms ease-in-out;
+}
+
+.basket_button {
+    background-color: orange;
+    border-radius: 1000px;
+    border: unset;
+    width: 80vw;
+}
+
+.basket_button:hover {
+    background-color: rgb(255, 180, 41);
+    cursor: pointer;
+}
+
 @media (max-width: 700px) {
     :root {
         --responsiv: true;
     }
 
+    .vertical_line {
+        display: none;
+    }
+
     .basket {
         margin-top: 0;
+        position: fixed;
+        margin-top: 110vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-height: 100vh;
+        background-color: var(--main_bg_color);
+        min-width: unset;
+        width: unset;
     }
 }
 

@@ -47,18 +47,30 @@
                     <div id="price_summary_role" digitrole_template="XX0,00€" class="digitrole"></div>
                 </div>
                 <div class="flex_r_jsb_ace">
-                    <span class="font_normal">Lieferkosten</span>
+                    <span class="font_normal">Lieferkosten (frei Haus ab 50€)</span>
                     <div id="delivery_role" digitrole_template="XX0,00€" class="digitrole"></div>
                 </div>
                 <div class="flex_r_jsb_ace">
                     <span>Gesamt</span>
                     <div id="summary_role" digitrole_template="XX0,00€" class="digitrole"></div>
                 </div>
+                <div class="font_24b p_2">
+                    <button class="flex_r_jce_ace flex_gap_2 pay_button font_24b p_2">
+                        <span>Bezahlen</span>
+                        <div id="pay_button_role" digitrole_template="XX0,00€" class="digitrole dr_24px"></div>
+                    </button>
+                </div>
             </div>
             <div id="empty_basket_info" class="flex_c_jce_ace" style="display: none;">
                 <img src="./img/basket1.svg" alt="">
                 <h2>Fülle Deinen Warenkorb</h2>
                 <span>Füge leckere Pizzen aus dem Menu hinzu</span>
+            </div>
+            <div id="basket_button_div" class="flex_r_jce_ace font_24b basket_button_div p_2">
+                <button onclick="clickBasketButtonResponsiv()" class="flex_r_jce_ace flex_gap_2 basket_button font_24b p_2">
+                    <span>Warenkorb</span>
+                    <div id="basket_button_role" digitrole_template="XX0,00€" class="digitrole dr_24px"></div>
+                </button>
             </div>
         </div>
 

@@ -1,12 +1,57 @@
 let basket = {};
 const deliveryPrice = 1500;
-const minOrderValue = 5000;
+const freeOrderValue = 5000;
+const responsivQuery = window.matchMedia('(max-width: 700px)');
+let isBasketResponsivShow = false;
+
+
+function clickBasketButtonResponsiv() {
+    if (isBasketResponsivShow) {
+        showBasket(false);
+        showBasketButton(true);
+        isBasketResponsivShow = false;
+    } else {
+        showBasket(true);
+        showBasketButton(false);
+        isBasketResponsivShow = true;
+    }
+}
+
+function checkResponsivMode(event) {
+    if (event.matches) {
+        showBasketButton(true);
+        document.getElementById('basket_button_div').style = 'bottom: 0;';
+        setTimeout(() => {
+            document.getElementById('basket').classList.add('basket_moveup');
+        }, 500);
+    }
+    else {
+        const basket = document.getElementById('basket');
+        basket.classList.remove('basket_moveup');
+        basket.style = '';
+        showBasketButton(false);
+        isBasketResponsivShow = false;
+    }
+}
+
+
+function showBasketButton(show) {
+    document.getElementById('basket_button_div').style = show ? 'bottom: 0;' : '';
+}
+
+
+function showBasket(show) {
+    document.getElementById('basket').style = show ? 'margin-top: 0' : '';
+}
 
 
 function initBasket() {
+    responsivQuery.addEventListener('change', checkResponsivMode);
     initDigitRoles();
     setDigitRoleValue('delivery_role', deliveryPrice);
     setDigitRoleValue('summary_role', 0);
+    setDigitRoleValue('pay_button_role', 0);
+    setDigitRoleValue('basket_button_role', 0);
 }
 
 
@@ -39,8 +84,12 @@ function renderSummarySection() {
         const pizzaID = basketList[index];
         priceSummary += getPizzaPrice(pizzaID) * getBasketItemAmount(pizzaID);
     }
+    const realDeliveryCost = (priceSummary > freeOrderValue ? 0 : deliveryPrice);
     setDigitRoleValue('price_summary_role', priceSummary);
-    setDigitRoleValue('summary_role', priceSummary + deliveryPrice);
+    setDigitRoleValue('basket_button_role', priceSummary);
+    setDigitRoleValue('delivery_role', realDeliveryCost);
+    setDigitRoleValue('summary_role', priceSummary + realDeliveryCost);
+    setDigitRoleValue('pay_button_role', priceSummary + realDeliveryCost);
 }
 
 
