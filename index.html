@@ -37,7 +37,11 @@
         <div class="vertical_line"></div>
 
         <div id="basket" class="flex_c_jfs_ast basket">
-            <h2 class="font_xce">Warenkorb</h2>
+            <div class="flex_r_jce_ace basket_headline">
+                <h2 class="font_xce">Warenkorb</h2>
+                <button id="basket_close_button" style="display: none;" onclick="showBasket(false)"><img
+                        src="./img/cancel.svg" alt=""></button>
+            </div>
             <div id="basket_list" class="flex_c_jfs_ast basket_list">
 
             </div>
@@ -67,7 +71,7 @@
                 <span>Füge leckere Pizzen aus dem Menu hinzu</span>
             </div>
             <div id="basket_button_div" class="flex_r_jce_ace font_24b basket_button_div p_2">
-                <button onclick="clickBasketButtonResponsiv()" class="flex_r_jce_ace flex_gap_2 basket_button font_24b p_2">
+                <button onclick="showBasket(true)" class="flex_r_jce_ace flex_gap_2 basket_button font_24b p_2">
                     <span>Warenkorb</span>
                     <div id="basket_button_role" digitrole_template="XX0,00€" class="digitrole dr_24px"></div>
                 </button>

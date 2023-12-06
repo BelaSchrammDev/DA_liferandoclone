@@ -58,6 +58,27 @@
     min-width: var(--basket_width);
 }
 
+.basket_headline {
+    position: relative;
+}
+
+.basket_headline button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 1000px;
+    border: unset;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket_headline button>img {
+    height: 30px;
+    width: 30px;
+}
+
 .basket_moveup {
     transition: margin-top 250ms ease-in-out;
 }

@@ -5,33 +5,28 @@ const responsivQuery = window.matchMedia('(max-width: 700px)');
 let isBasketResponsivShow = false;
 
 
-function clickBasketButtonResponsiv() {
-    if (isBasketResponsivShow) {
-        showBasket(false);
-        showBasketButton(true);
-        isBasketResponsivShow = false;
-    } else {
-        showBasket(true);
-        showBasketButton(false);
-        isBasketResponsivShow = true;
-    }
+function checkResponsivMode(event) {
+    if (event.matches) setResponsivMode();
+    else setNonResponsivMode();
 }
 
-function checkResponsivMode(event) {
-    if (event.matches) {
-        showBasketButton(true);
-        document.getElementById('basket_button_div').style = 'bottom: 0;';
-        setTimeout(() => {
-            document.getElementById('basket').classList.add('basket_moveup');
-        }, 500);
-    }
-    else {
-        const basket = document.getElementById('basket');
-        basket.classList.remove('basket_moveup');
-        basket.style = '';
-        showBasketButton(false);
-        isBasketResponsivShow = false;
-    }
+
+function setResponsivMode() {
+    showBasketButton(true);
+    showBasketCloseButton(true);
+    setTimeout(() => {
+        document.getElementById('basket').classList.add('basket_moveup');
+    }, 500);
+}
+
+
+function setNonResponsivMode() {
+    const basket = document.getElementById('basket');
+    basket.classList.remove('basket_moveup');
+    basket.style = '';
+    showBasketButton(false);
+    showBasketCloseButton(false);
+    isBasketResponsivShow = false;
 }
 
 
@@ -40,8 +35,15 @@ function showBasketButton(show) {
 }
 
 
+function showBasketCloseButton(show) {
+    document.getElementById('basket_close_button').style = show ? '' : 'display: none;';
+}
+
+
 function showBasket(show) {
     document.getElementById('basket').style = show ? 'margin-top: 0' : '';
+    showBasketButton(!show);
+    isBasketResponsivShow = show;
 }
 
 
@@ -147,8 +149,7 @@ function decreaseBasket(pizzaID) {
     basket[pizzaID]--;
     if (basket[pizzaID] == 0) {
         deleteFromBasket(pizzaID);
-    }
-    else {
+    } else {
         updateBasketItem(pizzaID);
         renderSummarySection();
     }
