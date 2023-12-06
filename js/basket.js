@@ -86,7 +86,7 @@ function updateBasketItem(pizzaID) {
 
 function deleteFromBasket(pizzaID) {
     const basketItem = document.getElementById('basketitem_' + pizzaID);
-    basketItem.style = `min-height: 0; max-height: 0; border-bottom: 0px solid rgba(0,0,0,0);`;
+    basketItem.style = `min-height: 0; height: 0; border-bottom: 0px solid rgba(0,0,0,0);`;
     setTimeout(() => { basketItem.remove(); }, 600);
     delete basket[pizzaID];
     renderSummarySection();

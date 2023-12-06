@@ -41,6 +41,13 @@
     font-size: 10px;
 }
 
+.vertical_line {
+    align-self: stretch;
+    width: 1px;
+    box-shadow: -2px -1px 4px 0px rgba(0, 0, 0, 0.37);
+    ;
+}
+
 .basket {
     position: sticky;
     top: 0;
@@ -49,7 +56,6 @@
     height: var(--basket_height);
     width: 300px;
     min-width: 300px;
-    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.37);
 }
 
 .basket_list {
@@ -64,11 +70,12 @@
 
 .basket_item {
     overflow: hidden;
-    max-height: 200px;
-    min-height: 98px;
+    height: var(--basket_item_height);
+    min-height: var(--basket_item_height);
     display: flex;
     border-bottom: 1px solid lightgray;
-    transition: max-height 300ms ease-in-out,
+    transition: height 300ms ease-in-out,
+        min-height 300ms ease-in-out,
         border-bottom 300ms ease-in-out;
 }
 
