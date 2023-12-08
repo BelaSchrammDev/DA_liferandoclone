@@ -1,9 +1,9 @@
 :root {
     --main_color: black;
-    --main_color_highlight: rgba(0, 147, 254, 1);
+    --main_color_highlight: orange;
     --main_bg_color: white;
     --main_bg_color_highlight: lightgrey;
-    --main_header_bg_color: gray;
+    --main_header_bg_color: white;
     --main_footer_bg_color: gray;
 
     --header_hight: 50px;
@@ -71,6 +71,25 @@ header {
     height: var(--header_hight);
 }
 
+header img {
+    height: var(--header_hight);
+}
+
+header img:not(:first-child) {
+    height: calc(var(--header_hight) * 0.4);
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 125ms ease-in-out;
+}
+
+header img:not(:first-child):hover {
+    background-color: var(--main_bg_color_highlight);
+}
+
+header span {
+    color: var(--main_color_highlight);
+    vertical-align: middle;
+}
 
 /* ------------------------------------------ */
 

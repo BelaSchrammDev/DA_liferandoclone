@@ -1,3 +1,11 @@
+.pizzeria_info {
+    background-image: url('../img/pizza.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    min-height: 300px;
+}
+
 .menu_box {
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -192,4 +200,9 @@
         right: 0;
         top: 0;
     }
+
+    header span {
+        display: none;
+    }
+
 }

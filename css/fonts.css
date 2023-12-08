@@ -2,6 +2,10 @@
     font-family: 'Rationale', sans-serif;
 }
 
+.text_align_ce {
+    text-align: center;
+}
+
 .font_bold {
     font-weight: bold;
 }
