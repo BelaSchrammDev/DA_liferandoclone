@@ -5,8 +5,8 @@ const responsivQuery = window.matchMedia('(max-width: 700px)');
 let isBasketResponsivShow = false;
 
 
-function checkResponsivMode(event) {
-    if (event.matches) setResponsivMode();
+function checkResponsivMode() {
+    if (responsivQuery.matches) setResponsivMode();
     else setNonResponsivMode();
 }
 
@@ -54,6 +54,7 @@ function initBasket() {
     setDigitRoleValue('summary_role', 0);
     setDigitRoleValue('pay_button_role', 0);
     setDigitRoleValue('basket_button_role', 0);
+    checkResponsivMode();
 }
 
 
@@ -92,6 +93,15 @@ function renderSummarySection() {
     setDigitRoleValue('delivery_role', realDeliveryCost);
     setDigitRoleValue('summary_role', priceSummary + realDeliveryCost);
     setDigitRoleValue('pay_button_role', priceSummary + realDeliveryCost);
+    setBasketCount(basketList.length);
+}
+
+
+function setBasketCount(value) {
+    const countElement = document.getElementById('basket_button_icon_count');
+    if (value == 0) countElement.style = 'display: none;';
+    else countElement.style = 'display: block;';
+    countElement.innerHTML = value;
 }
 
 

@@ -6,6 +6,15 @@
     min-height: 300px;
 }
 
+.pizzeria_icon {
+    margin-top: -70px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: var(--main_bg_color);
+    height: 90px;
+    width: 90px;
+}
+
 .menu_box {
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -151,6 +160,8 @@
     left: 0;
     right: 0;
     transition: bottom 125ms ease-in-out;
+    background-color: white;
+    border-top: 1px solid lightgray;
 }
 
 .basket_button {
@@ -158,6 +169,26 @@
     border-radius: 1000px;
     border: unset;
     width: 80vw;
+}
+
+.basket_button_icon {
+    position: relative;
+}
+
+.basket_button_icon img {
+    height: 30px;
+    width: 30px;
+}
+
+.basket_button_icon span {
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    left: -5px;
+    top: -5px;
+    font-size: 16px;
 }
 
 .basket_button:hover {
@@ -185,6 +216,20 @@
         background-color: var(--main_bg_color);
         min-width: unset;
         width: unset;
+    }
+
+    footer {
+        margin-bottom: 76px;
+    }
+
+    footer span {
+        padding-bottom: 20px;
+    }
+
+    .footer_links {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 

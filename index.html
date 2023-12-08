@@ -27,12 +27,14 @@
 
         <section class="flex_c_jce_ast flex_grow_1 flex_gap_2">
             <div>
-                <div class="pizzeria_info"></div>
-                <div class="my_container p_y_1">
+                <div class="pizzeria_info">
+                </div>
+                <div class="my_container flex_c_jfs_afs flex_gap_3 p_y_1">
+                    <img class="pizzeria_icon" src="./img/pizzafull.png" alt="">
                     <span class="font_32b">Pizzamütze</span>
                 </div>
             </div>
-            <div id="menu" class="my_container flex_c_jfs_ast flex_gap_1"></div>
+            <div id="menu" class="my_container flex_c_jfs_ast flex_gap_1 menu_list"></div>
         </section>
 
         <div class="vertical_line"></div>
@@ -71,8 +73,12 @@
                 <h2>Fülle Deinen Warenkorb</h2>
                 <span>Füge leckere Pizzen aus dem Menu hinzu</span>
             </div>
-            <div id="basket_button_div" class="flex_r_jce_ace font_24b basket_button_div p_2">
+            <div id="basket_button_div" class="flex_r_jce_ace font_24b basket_button_div p_y_2">
                 <button onclick="showBasket(true)" class="flex_r_jce_ace flex_gap_2 basket_button font_24b p_2">
+                    <div class="basket_button_icon">
+                        <span id="basket_button_icon_count" style="display: none;"></span>
+                        <img src="./img/basket1.svg" alt="">
+                    </div>
                     <span>Warenkorb</span>
                     <div id="basket_button_role" digitrole_template="XX0,00€" class="digitrole dr_24px"></div>
                 </button>
