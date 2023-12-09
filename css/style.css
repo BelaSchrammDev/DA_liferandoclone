@@ -77,6 +77,7 @@
 
 .basket_headline {
     position: relative;
+    background-color: rgb(245, 245, 245);
 }
 
 .basket_headline button {
@@ -140,6 +141,10 @@
 .basket_item img {
     width: 20px;
     height: 20px;
+}
+
+.price_summary {
+    background-color: rgb(245, 245, 245);
 }
 
 .pay_button {

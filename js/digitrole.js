@@ -21,6 +21,7 @@ function initDigitRole(digitrole) {
     }
     digitrole.innerHTML = digitroleInnerHTML;
     setDigitRoleValue(digitroleID, 0);
+    adjustRoleHeight(digitroleID);
 }
 
 
@@ -76,6 +77,19 @@ function setSingleDigitRoleNumber(digitroleID, number, value) {
 }
 
 
+function adjustRoleHeight(digitroleID) {
+    const digitrole = document.getElementById(digitroleID);
+    const roleDigits = digitrole.children[0];
+    const digitHeight = roleDigits.children[0].clientHeight + 'px';
+    digitrole.style['height'] = digitHeight;
+    for (let index = 0; index < digitrole.children.length; index++) {
+        const element = digitrole.children[index];
+        if (element.children.length > 1) element.children[2].style = `height: ${digitHeight}`;
+    }
+    roleDigits.children[2].style = `height: ${digitHeight}`;
+}
+
+
 function roleToDigit(digitrole, value) {
     const digitrole_n = digitrole.children[0];
     const digitrole_nn = digitrole.children[1];
@@ -86,13 +100,13 @@ function roleToDigit(digitrole, value) {
     } else {
         digitrole_n.innerHTML = value;
     }
-    digitrole_n.style = ` margin-top: ${newMarginTop};`;
+    digitrole_n.style['margin-top'] = newMarginTop;
 }
 
 
 function roleToInvisible(digitrole) {
     const digitrole_n = digitrole.children[0];
-    digitrole_n.style = ` margin-top: -${digitrole_n.clientHeight * 2}px;`;
+    digitrole_n.style['margin-top'] = digitrole_n.clientHeight * 2 + 'px';
 }
 
 

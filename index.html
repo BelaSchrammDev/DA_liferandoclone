@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 
+    ToDo:
+
+    o   onclick pay
+    o   + highlight when click on a menuitem
+    o   cloas basket button pointer and color by hovering
+
+ -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +57,7 @@
             <div id="basket_list" class="flex_c_jfs_ast basket_list">
 
             </div>
-            <div id="price_summary" class="flex_c_jfs_ast m_2 font_16b">
+            <div id="price_summary" class="flex_c_jfs_ast p_2 font_16b price_summary">
                 <div class="flex_r_jsb_ace">
                     <span class="font_normal">Zwischensumme</span>
                     <div id="price_summary_role" digitrole_template="XX0,00€" class="digitrole"></div>
@@ -68,7 +77,7 @@
                     </button>
                 </div>
             </div>
-            <div id="empty_basket_info" class="flex_c_jce_ace" style="display: none;">
+            <div id="empty_basket_info" class="flex_c_jce_ace p_y_2" style="display: none;">
                 <img src="./img/basket1.svg" alt="">
                 <h2>Fülle Deinen Warenkorb</h2>
                 <span>Füge leckere Pizzen aus dem Menu hinzu</span>

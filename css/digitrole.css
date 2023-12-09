@@ -1,28 +1,16 @@
 .digitrole {
     overflow: hidden;
-    height: 16px;
     display: flex;
+    box-sizing: border-box;
 }
 
 .digitrole>div {
-    overflow: hidden;
+    display: block;
     width: 10px;
     height: 16px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.digitrole>div>div {
-    transition: margin 500ms ease-in-out;
-}
-
-.dr_24px {
-    height: 24px;
 }
 
 .dr_24px>div {
@@ -30,3 +18,18 @@
     height: 24px;
     font-size: 24px;
 }
+
+.digitrole>div>div {
+    transition: margin 500ms ease-in-out;
+}
+
+/* debuging */
+
+.digitrole>div>div:first-child {
+    background-color: lightblue;
+}
+
+.digitrole>div>div:last-child {
+    background-color: lightcoral;
+}
+
