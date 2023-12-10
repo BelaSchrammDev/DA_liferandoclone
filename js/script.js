@@ -3,7 +3,6 @@ function init() {
     initMenu();
     initBasket();
     renderMenu();
-    setVisibiltyOfDivs();
 }
 
 

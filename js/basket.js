@@ -5,6 +5,18 @@ const responsivQuery = window.matchMedia('(max-width: 700px)');
 let isBasketResponsivShow = false;
 
 
+function initBasket() {
+    responsivQuery.addEventListener('change', checkResponsivMode);
+    initDigitRoles();
+    setDigitRoleValue('delivery_role', deliveryPrice);
+    setDigitRoleValue('summary_role', 0);
+    setDigitRoleValue('pay_button_role', 0);
+    setDigitRoleValue('basket_button_role', 0);
+    checkResponsivMode();
+    setVisibiltyOfDivs();
+}
+
+
 function checkResponsivMode() {
     if (responsivQuery.matches) setResponsivMode();
     else setNonResponsivMode();
@@ -44,17 +56,6 @@ function showBasket(show) {
     document.getElementById('basket').style = show ? 'margin-top: 0' : '';
     showBasketButton(!show);
     isBasketResponsivShow = show;
-}
-
-
-function initBasket() {
-    responsivQuery.addEventListener('change', checkResponsivMode);
-    initDigitRoles();
-    setDigitRoleValue('delivery_role', deliveryPrice);
-    setDigitRoleValue('summary_role', 0);
-    setDigitRoleValue('pay_button_role', 0);
-    setDigitRoleValue('basket_button_role', 0);
-    checkResponsivMode();
 }
 
 

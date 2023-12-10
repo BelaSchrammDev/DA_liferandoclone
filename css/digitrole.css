@@ -1,3 +1,9 @@
+:root {
+    --digitrole_size_small: 16px;
+    --digitrole_size_large: 32px;
+    --digitrole_size_medium: 24px;
+}
+
 .digitrole {
     overflow: hidden;
     display: flex;
@@ -6,15 +12,16 @@
 
 .digitrole>div {
     display: block;
-    width: 10px;
+    width: 8px;
     height: 16px;
     font-size: 16px;
+    line-height: 20px;
     font-weight: bold;
     text-align: center;
 }
 
 .dr_24px>div {
-    width: 13px;
+    width: 12px;
     height: 24px;
     font-size: 24px;
 }
@@ -22,14 +29,3 @@
 .digitrole>div>div {
     transition: margin 500ms ease-in-out;
 }
-
-/* debuging */
-
-.digitrole>div>div:first-child {
-    background-color: lightblue;
-}
-
-.digitrole>div>div:last-child {
-    background-color: lightcoral;
-}
-
