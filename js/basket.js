@@ -207,5 +207,6 @@ function increaseBasket(pizzaID) {
         basket[pizzaID] = 1;
         addNewBasketItem(pizzaID);
     }
+    highlightMenuPlusIcon(pizzaID);
     renderSummarySection();
 }

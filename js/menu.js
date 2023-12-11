@@ -38,6 +38,15 @@ function initMenu() {
 }
 
 
+function highlightMenuPlusIcon(pizzaID) {
+    const plusIcon = document.getElementById('plus_' + pizzaID);
+    plusIcon.classList.add('menu_box_add_highlight');
+    setTimeout(() => {
+        plusIcon.classList.remove('menu_box_add_highlight');
+    }, 300);
+}
+
+
 function formatPrice(num) {
     let numAsString = num.toString();
     let characters = numAsString.split("").reverse();
@@ -81,7 +90,7 @@ function getMenuBoxHTML(pizza) {
                 <div class="flex_r_jfs_ace flex_gap_1">${getInfos(pizza)}</div>
                 <span>${getIngredients(pizza)}</span>
                 <span class="font_bold">${formatPrice(pizza.price)} €</span>
-                <div class="menu_box_add"><img src="./img/plus.svg"></div>
+                <div id="plus_${pizza.ID}" class="menu_box_add"><img src="./img/plus.svg"></div>
             </div>`;
 }
 
