@@ -7,18 +7,6 @@ const responsivQuery = window.matchMedia('(max-width: 700px)');
 let isBasketResponsivShow = false;
 
 
-function initBasket() {
-    responsivQuery.addEventListener('change', checkResponsivMode);
-    initDigitRoles();
-    setDigitRoleValue('delivery_role', deliveryPrice);
-    setDigitRoleValue('summary_role', 0);
-    setDigitRoleValue('pay_button_role', 0);
-    setDigitRoleValue('basket_button_role', 0);
-    checkResponsivMode();
-    setVisibiltyOfDivs();
-}
-
-
 function checkResponsivMode() {
     if (responsivQuery.matches) setResponsivMode();
     else setNonResponsivMode();
@@ -41,6 +29,18 @@ function setNonResponsivMode() {
     showBasketButton(false);
     showBasketCloseButton(false);
     isBasketResponsivShow = false;
+}
+
+
+function initBasket() {
+    responsivQuery.addEventListener('change', checkResponsivMode);
+    initDigitRoles();
+    setDigitRoleValue('delivery_role', deliveryPrice);
+    setDigitRoleValue('summary_role', 0);
+    setDigitRoleValue('pay_button_role', 0);
+    setDigitRoleValue('basket_button_role', 0);
+    checkResponsivMode();
+    toggleEmptyBasketInfo();
 }
 
 
@@ -72,7 +72,7 @@ function setBasketItemPrice(pizzaID, amount = 1) {
 }
 
 
-function setVisibiltyOfDivs() {
+function toggleEmptyBasketInfo() {
     if (ifBasketEmpty()) {
         setElementDisplayStyle('empty_basket_info', 'flex');
         setElementDisplayStyle('price_summary', 'none');
@@ -133,7 +133,7 @@ function clickPayButton() {
         basket = {};
         document.getElementById('basket_list').innerHTML = '';
         renderSummarySection();
-        setVisibiltyOfDivs();
+        toggleEmptyBasketInfo();
     }
 }
 
@@ -163,7 +163,7 @@ function getBasketItemHtml(pizzaID) {
 
 
 function addNewBasketItem(pizzaID) {
-    setVisibiltyOfDivs();
+    toggleEmptyBasketInfo();
     document.getElementById('basket_list').innerHTML += getBasketItemHtml(pizzaID);
     initDigitRole(document.getElementById(`basketitem_${pizzaID}_summary`));
     setBasketItemPrice(pizzaID);
@@ -184,7 +184,7 @@ function deleteFromBasket(pizzaID) {
     setTimeout(() => { basketItem.remove(); }, 600);
     delete basket[pizzaID];
     renderSummarySection();
-    setVisibiltyOfDivs();
+    toggleEmptyBasketInfo();
 }
 
 
