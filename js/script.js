@@ -20,10 +20,3 @@ async function includeHTML() {
         }
     }
 }
-
-
-function ifResponsiv() { return getCssVariable_Bool('--responsiv'); }
-function getCssVariable_String(varName) { return window.getComputedStyle(document.body).getPropertyValue(varName); }
-function getCssVariable_Bool(varName) { return getCssVariable_String(varName) == 'true'; }
-function getCssVariable_Number(varName) { return +getCssVariable_String(varName); }
-function setCssVariable(varName, value) { document.querySelector(':root').style.setProperty(varName, value); }

@@ -91,12 +91,16 @@ function renderSummarySection() {
         priceSummary += getPizzaPrice(pizzaID) * getBasketItemAmount(pizzaID);
     }
     const realDeliveryCost = (priceSummary > freeOrderValue ? 0 : deliveryPrice);
+    renderSummaryValues(priceSummary, realDeliveryCost);
+    renderPayButton(priceSummary, realDeliveryCost);
+    renderBasketButton(priceSummary, basketList.length);
+}
+
+
+function renderSummaryValues(priceSummary, realDeliveryCost) {
     setDigitRoleValue('price_summary_role', priceSummary);
-    setDigitRoleValue('basket_button_role', priceSummary);
     setDigitRoleValue('delivery_role', realDeliveryCost);
     setDigitRoleValue('summary_role', priceSummary + realDeliveryCost);
-    renderPayButton(priceSummary, realDeliveryCost);
-    setBasketCount(basketList.length);
 }
 
 
@@ -114,6 +118,15 @@ function renderPayButton(priceSummary, realDeliveryCost) {
 }
 
 
+function renderBasketButton(priceSummary, value) {
+    setDigitRoleValue('basket_button_role', priceSummary);
+    const countElement = document.getElementById('basket_button_icon_count');
+    if (value == 0) countElement.style = 'display: none;';
+    else countElement.style = 'display: block;';
+    countElement.innerHTML = value;
+}
+
+
 function clickPayButton() {
     if (payAllowed) {
         alert('Vielen Dank für Ihre Bestellung.');
@@ -122,14 +135,6 @@ function clickPayButton() {
         renderSummarySection();
         setVisibiltyOfDivs();
     }
-}
-
-
-function setBasketCount(value) {
-    const countElement = document.getElementById('basket_button_icon_count');
-    if (value == 0) countElement.style = 'display: none;';
-    else countElement.style = 'display: block;';
-    countElement.innerHTML = value;
 }
 
 

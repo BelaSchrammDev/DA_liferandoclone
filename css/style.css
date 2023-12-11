@@ -184,7 +184,7 @@
 .pay_button_disabled {
     background-color: lightgray;
     cursor: default;
-    color: gray;
+    color: gray !important;
 }
 
 .pay_button_disabled:hover {
