@@ -25,7 +25,7 @@
     <script src="./js/menu.js"></script>
     <script src="./js/basket.js"></script>
     <script src="./js/digitrole.js"></script>
-    <title>Document</title>
+    <title>Lieferclone</title>
 </head>
 
 <body onload="init()">
@@ -41,6 +41,21 @@
                 <div class="my_container flex_c_jfs_afs flex_gap_3 p_y_1">
                     <img class="pizzeria_icon" src="./img/pizzafull.png" alt="">
                     <span class="font_32b">Pizzamütze</span>
+                    <div class="flex_r_jfs_ace rating_info">
+                        <img src="./img/orange_star_full.svg" alt="">
+                        <img src="./img/orange_star_full.svg" alt="">
+                        <img src="./img/orange_star_full.svg" alt="">
+                        <img src="./img/orange_star_full.svg" alt="">
+                        <img src="./img/orange_star_half.svg" alt="">
+                        <span>625 Bewertungen</span>
+                    </div>
+                    <div class="flex_r_jfs_ace flex_gap_2 delivery_info">
+                        <img src="./img/basket1.svg" alt="">
+                        <span>Min. 20,00 €</span>
+                        <span style="font-weight: bold;">/</span>
+                        <img src="./img/bike.svg" alt="">
+                        <span>5,00 € , ab 50,00 € frei Haus</span>
+                    </div>
                 </div>
             </div>
             <div id="menu" class="my_container flex_c_jfs_ast flex_gap_1 menu_list"></div>
@@ -51,8 +66,9 @@
         <div id="basket" class="flex_c_jfs_ast basket">
             <div class="flex_r_jce_ace basket_headline">
                 <h2 class="font_xce">Warenkorb</h2>
-                <button id="basket_close_button" style="display: none;" onclick="showBasket(false)"><img
-                        src="./img/cancel.svg" alt=""></button>
+                <button id="basket_close_button" style="display: none;" onclick="showBasket(false)">
+                    <img src="./img/cancel.svg" alt="">
+                </button>
             </div>
             <div id="basket_list" class="flex_c_jfs_ast basket_list">
 
@@ -71,7 +87,8 @@
                     <div id="summary_role" digitrole_template="XX0,00€" class="digitrole"></div>
                 </div>
                 <div class="font_24b p_2">
-                    <button class="flex_r_jce_ace flex_gap_2 pay_button font_24b p_2">
+                    <button onclick="clickPayButton()" id="pay_button"
+                        class="flex_r_jce_ace flex_gap_2 pay_button pay_button_disabled font_24b p_2">
                         <span>Bezahlen</span>
                         <div id="pay_button_role" digitrole_template="XX0,00€" class="digitrole dr_24px"></div>
                     </button>

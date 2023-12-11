@@ -15,6 +15,24 @@
     width: 90px;
 }
 
+.rating_info img {
+    height: 20px;
+}
+
+.rating_info span {
+    padding-left: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.rating_info span:hover {
+    text-decoration: none;
+}
+
+.delivery_info img {
+    height: 20px;
+}
+
 .menu_box {
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -116,10 +134,13 @@
     height: var(--basket_item_height);
     min-height: var(--basket_item_height);
     display: flex;
-    border-bottom: 1px solid lightgray;
     transition: height 300ms ease-in-out,
-        min-height 300ms ease-in-out,
-        border-bottom 300ms ease-in-out;
+    min-height 300ms ease-in-out,
+    border-bottom 300ms ease-in-out;
+}
+
+.basket_item:not(:last-child) {
+    border-bottom: 1px solid lightgray;
 }
 
 .basket_item button {
@@ -152,11 +173,23 @@
     border-radius: 1000px;
     border: unset;
     width: 100%;
+    transition: background-color 250ms ease-in-out;
 }
 
 .pay_button:hover {
     background-color: rgb(255, 180, 41);
     cursor: pointer;
+}
+
+.pay_button_disabled {
+    background-color: lightgray;
+    cursor: default;
+    color: gray;
+}
+
+.pay_button_disabled:hover {
+    background-color: lightgray;
+    cursor: default;
 }
 
 .basket_button_div {

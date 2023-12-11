@@ -12,18 +12,18 @@
 
 .digitrole>div {
     display: block;
-    width: 8px;
-    height: 16px;
-    font-size: 16px;
-    line-height: 20px;
+    width: calc(var(--digitrole_size_small)/2);
+    height: var(--digitrole_size_small);
+    font-size: var(--digitrole_size_small);
+    line-height: calc(var(--digitrole_size_small)+2);
     font-weight: bold;
     text-align: center;
 }
 
 .dr_24px>div {
-    width: 12px;
-    height: 24px;
-    font-size: 24px;
+    width: calc(var(--digitrole_size_medium)/2);
+    height: var(--digitrole_size_medium);
+    font-size: var(--digitrole_size_medium);
 }
 
 .digitrole>div>div {

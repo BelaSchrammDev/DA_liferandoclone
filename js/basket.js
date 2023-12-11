@@ -1,6 +1,8 @@
 let basket = {};
-const deliveryPrice = 1500;
+const minOrderValue = 2000;
+const deliveryPrice = 500;
 const freeOrderValue = 5000;
+let payAllowed = false;
 const responsivQuery = window.matchMedia('(max-width: 700px)');
 let isBasketResponsivShow = false;
 
@@ -93,8 +95,33 @@ function renderSummarySection() {
     setDigitRoleValue('basket_button_role', priceSummary);
     setDigitRoleValue('delivery_role', realDeliveryCost);
     setDigitRoleValue('summary_role', priceSummary + realDeliveryCost);
-    setDigitRoleValue('pay_button_role', priceSummary + realDeliveryCost);
+    renderPayButton(priceSummary, realDeliveryCost);
     setBasketCount(basketList.length);
+}
+
+
+function renderPayButton(priceSummary, realDeliveryCost) {
+    setDigitRoleValue('pay_button_role', priceSummary + realDeliveryCost);
+    const payButton = document.getElementById('pay_button');
+    if (priceSummary > minOrderValue) {
+        payButton.classList.remove('pay_button_disabled');
+        payAllowed = true;
+    }
+    else {
+        payButton.classList.add('pay_button_disabled');
+        payAllowed = false;
+    }
+}
+
+
+function clickPayButton() {
+    if (payAllowed) {
+        alert('Vielen Dank für Ihre Bestellung.');
+        basket = {};
+        document.getElementById('basket_list').innerHTML = '';
+        renderSummarySection();
+        setVisibiltyOfDivs();
+    }
 }
 
 
